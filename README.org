@@ -37,4 +37,4 @@ Just put ~org+-align-table.el~ somewhere in your ~load-path~ and add the followi
 * Usage
 The usage is very simple. ~org+-align-table-mode~ is enabled in Org mode buffers opened after the installation of this package.
 
-You can toggle it by typing <kbd>M-x</kbd> ~org+-align-table-mode~.
+You can toggle it by typing ~M-x org+-align-table-mode~.
