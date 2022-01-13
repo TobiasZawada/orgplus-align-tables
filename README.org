@@ -1,0 +1,40 @@
+#+TITLE: Align tables with formulae in Orgmode
+#+AUTHOR: Tobias Zawada
+
+* Introduction
+
+
+Formulae with LaTeX preview can mess up the alignment of Org tables.
+An example is the the following table:
+
+| Name                              | Formula            | Domain   |
+|-----------------------------------+--------------------+----------|
+| Einstein's resting energy formula | $E = m\cdot c^2$   | Physics  |
+| Pythagoras                        | $z=\sqrt{x^2+y^2}$ | Geometry |
+
+With vanilla Org 9.3 it is rendered as shown in the following picture:
+
+[[file:images/vanilla.png]]
+
+The columns behind the formulae are not correctly aligned.
+
+This is corrected by this package.
+With ~org+-align-table-mode~ enabled, the columns are aligned:
+
+[[file:images/aligned.png]]
+
+Note, that this package is in an experimental state.
+Please, try it and maybe, leave a note if something goes wrong.
+* Installation
+
+Just put ~org+-align-table.el~ somewhere in your ~load-path~ and add the following to your init file:
+
+#+BEGIN_SRC emacs-lisp :export source :eval never
+(with-eval-after-load 'org-mode
+  (require org+-align-table.el))
+#+END_SRC
+
+* Usage
+The usage is very simple. ~org+-align-table-mode~ is enabled in Org mode buffers opened after the installation of this package.
+
+You can toggle it by typing <kbd>M-x</kbd> ~org+-align-table-mode~.
