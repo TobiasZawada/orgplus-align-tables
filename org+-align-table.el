@@ -1,5 +1,39 @@
-  (require 'cl-lib)
-  (require 'org-table)
+;;; org+-align-table.el --- Align org tables with rendered formulae  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2022  Tobias Zawada
+
+;; Author: Tobias Zawada <i@tn-home.de>
+;; Keywords: outlines, convenience
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Installation
+
+;; Just put org+-align-table.el somewhere in your load-path and add the following to your init file:
+;; (with-eval-after-load 'org-mode (require org+-align-table.el))
+
+;; Usage
+
+;; The usage is very simple.  Org+-align-table-mode is enabled in Org mode buffers opened after the installation of this package.
+;; You can toggle it by typing <kbd>M-x</kbd> org+-align-table-mode.
+
+;;; Code:
+
+(require 'cl-lib)
+(require 'org-table)
   (defun org+-search-forward-table (&optional limit noerror table-type)
     "Search for the next org table go to its end and return point.
   Set the boundaries of group 0 of the match data to the
@@ -66,3 +100,6 @@
        org+-align-table-mode-keywords))
     (font-lock-flush)
     (font-lock-ensure))
+(provide 'org+-align-table)
+;;; org+-align-table.el ends here
+
