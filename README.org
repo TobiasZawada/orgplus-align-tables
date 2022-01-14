@@ -28,7 +28,7 @@ With ~org+-align-table-mode~ enabled, the columns are aligned:
 
 [[file:images/aligned.png]]
 
-In contrast to ~valign~, this package does not try to be perfect. It fully exploits the alignment of Orgmode.
+In contrast to ~valign~, this package does not try to be perfect. It fully exploits the alignment of Orgmode. This makes it faster on large tables.
 Orgmode calculates the column widths on the basis of the *text* including the LaTeX *source code* and places the column separators accordingly.
 This package assumes that the generated images for the formulae are smaller than the LaTeX source code and puts the ~space :align-to ...~ text property on the last space in the table cell such that the displayed position of the separator fits the count of the characters from the beginning of line to the separator character.
 
