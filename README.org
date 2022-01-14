@@ -5,6 +5,9 @@
 
 
 Formulae with LaTeX preview can mess up the alignment of Org tables.
+
+
+
 An example is the the following table:
 
 | Name                              | Formula            | Domain   |
@@ -18,10 +21,16 @@ With vanilla Org 9.3 it is rendered as shown in the following picture:
 
 The columns behind the formulae are not correctly aligned.
 
-This is corrected by this package.
+This is corrected by [the package `valign`](https://github.com/casouri/valign) or by this package as a lightweight alternative.
+
+We only discuss this package in the following.
 With ~org+-align-table-mode~ enabled, the columns are aligned:
 
 [[file:images/aligned.png]]
+
+In contrast to `valign` this package does not try to be perfect. It fully exploits the alignment of Orgmode.
+Orgmode calculates the column widths on the basis of the **text** including the LaTeX **source code** and places the column separators accordingly.
+This package assumes that the generated images for the formulae are smaller than the LaTeX source code and puts the `space :align-to ...` text property on the last space in the table cell such that the displayed position of the separator fits the count of the characters from the beginning of line to the separator character.
 
 Note, that this package is in an experimental state.
 Please, try it and maybe, leave a note if something goes wrong.
