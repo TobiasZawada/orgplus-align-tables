@@ -86,17 +86,15 @@
 (setq org+-align-table-mode-keywords '((org+-font-lock-align-tables)))
 
 (defun org+-align-table-string-width (string)
-  "Return length of the visible part of string S.
-Visible part is determined according to text PROPERTY, which is
-either `invisible' or `display'.  BEG and END are 0-indices
-delimiting S."
+  "Return length of the visible part of STRING."
   (let ((invisibility-spec buffer-invisibility-spec)
-	(locals (org-get-local-variables)))
+;;	(locals (org-get-local-variables)) ;; Leads to strange error in outline-mode.
+	)
     (with-temp-buffer
       (setq buffer-invisibility-spec invisibility-spec)
-      (mapcar (lambda (local)
-		(set (car local) (cdr local)))
-	      locals)
+;;      (mapcar (lambda (local)
+;;		(set (car local) (cdr local)))
+;;	      locals)
       (insert string)
       (current-column))))
 
